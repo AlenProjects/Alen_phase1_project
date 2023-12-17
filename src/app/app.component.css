@@ -1,0 +1,37 @@
+.header{
+  margin: 0;
+  padding: 15px 15px 15px 15px;
+  float: left;
+}
+
+.horizontal-nav {
+  list-style-type: none;
+  padding: 15px 15px 15px 15px;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end; /* Align the nav to the right */
+}
+
+.horizontal-nav li {
+  margin-right: 10px; /* Adjust the spacing between items as needed */
+}
+
+.horizontal-nav li:last-child {
+  margin-right: 0; /* Remove right margin for the last item */
+}
+
+.horizontal-nav a {
+  text-decoration: none;
+  color: blue;
+  padding: 5px 10px;
+  border: 1px solid blue; /* Add borders for a button-like appearance */
+  border-radius: 10px;
+}
+
+.horizontal-nav a:hover {
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid blue; /* Add borders for a button-like appearance */
+  background-color: blue; /* Change the background color on hover */
+}
+

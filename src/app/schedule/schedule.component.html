@@ -1,0 +1,39 @@
+<div class="schedule-meeting" style = "text-align: left; font-size: large;">
+  <div><h2><b>Create a Meeting Schedule</b></h2>
+  <hr>
+<form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="meetingTopic"><b>Meeting Topic</b></label>
+    <div>
+    <input formControlName="meetingTopic" [ngClass]="{'is-invalid':submitted && scheduleForm.controls['meetingTopic'].errors}" type="text" class="form-control" id="meeting-topic" placeholder="Enter Meeting Topic" ngModal>
+    <div *ngIf="submitted && scheduleForm.controls['meetingTopic'].errors" class="text-danger" style="font-size: small;">
+      <div *ngIf="submitted && scheduleForm.controls['meetingTopic'].errors['required']">
+        Meeting's Topic is required.
+      </div>
+      <div *ngIf="submitted && scheduleForm.controls['meetingTopic'].errors['minlength']">
+        Meeting's Topic must have atleast 4 characters.
+      </div>
+    </div>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="count"><b>Number of People</b></label><div>
+    <input formControlName="count" [ngClass]="{'is-invalid':submitted && scheduleForm.controls['count'].errors}" type="number" class="form-control" id="count-of-people" placeholder="Enter number of people" ngModal>
+    <div *ngIf="submitted && scheduleForm.controls['count'].errors" class="text-danger" style="font-size: small;">
+      <div *ngIf="submitted && scheduleForm.controls['count'].errors['required']">
+        Count of the people is required.
+      </div>
+      <div *ngIf="submitted && scheduleForm.controls['count'].errors['max']">
+        Only atmost 100 people can join the meeting.
+      </div>
+    </div>
+  </div></div><br>
+  <div class="form-group">
+    <label for="Time"><b>Start Time</b></label><br>
+    <input type="datetime-local" class="form-control" id="date">
+    <hr>
+  </div>
+  <button type="submit" class="btn btn-outline-primary">Create Meeting</button>
+</form>
+</div>
+</div>

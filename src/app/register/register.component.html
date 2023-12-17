@@ -1,0 +1,70 @@
+<div class="register-form" style = "text-align: left; font-size: medium;">
+  <div><h1><b>Create a Client</b></h1>
+  <div><p>Please fill in this form to create a client.</p><hr>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="clientName"><b>Name</b></label>
+    <div>
+    <input formControlName="clientName" [ngClass]="{'is-invalid':submitted && registerForm.controls['clientName'].errors}" type="name" class="form-control" id="Name" placeholder="Enter Name" ngModal>
+    <div *ngIf="submitted && registerForm.controls['clientName'].errors" class="text-danger" style="font-size: small;">
+      <div *ngIf="submitted && registerForm.controls['clientName'].errors['required']">
+        Name is required.
+      </div>
+    </div>
+    </div>
+  </div><br>
+  <div class="form-group">
+    <label for="clientEmail"><b>Email</b></label><div>
+    <input formControlName="clientEmail" [ngClass]="{'is-invalid':submitted && registerForm.controls['clientEmail'].errors}" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email" ngModal>
+    <div *ngIf="submitted && registerForm.controls['clientEmail'].errors" class="text-danger" style="font-size: small;">
+      <div *ngIf="submitted && registerForm.controls['clientEmail'].errors['required']">
+        Email is required.
+      </div>
+      <div *ngIf="submitted && registerForm.controls['clientEmail'].errors['email']">
+        Please provide a valid Email.
+      </div>
+    </div>
+  </div></div><br>
+  <div class="form-group">
+    <label for="address"><b>Address</b></label>
+    <div>
+    <input formControlName="address" [ngClass]="{'is-invalid':submitted && registerForm.controls['address'].errors}" type="text" class="form-control" id="Address" placeholder="Enter Address" ngModal>
+    <div *ngIf="submitted && registerForm.controls['address'].errors" class="text-danger" style="font-size: small;">
+      <div *ngIf="submitted && registerForm.controls['address'].errors['required']">
+        Address is required.
+      </div>
+    </div>
+  </div></div><br>
+  <div class="form-group">
+    <label for="password"><b>Password</b></label>
+    <div>
+    <input formControlName="password" [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password" class="form-control" id="password" placeholder="Enter Password" ngModal>
+    <div *ngIf="submitted && f['password'].errors" class="text-danger" style="font-size: small;">
+      <div *ngIf="submitted && f['password'].errors['required']">
+        Password is required.
+      </div>
+      <div *ngIf="submitted && f['password'].errors['minlength']">
+        Password must have atleast 8 characters.
+      </div>
+      <div *ngIf="submitted && f['password'].errors['maxlength']">
+        Password must have atmost 16 characters.
+      </div>
+    </div>
+  </div></div><br>
+  <div class="form-group">
+    <label for="repeatPassword"><b>Confirm Password</b></label>
+    <div>
+    <input formControlName="repeatPassword" [ngClass]="{'is-invalid':submitted && registerForm.controls['repeatPassword'].errors}" type="password" class="form-control" id="repeat-password" placeholder="Confirm Password" ngModal>
+    <div *ngIf="submitted && f['repeatPassword'].errors" class="text-danger" style="font-size: small;">
+      <div *ngIf="submitted && f['repeatPassword'].errors['required']">
+       Confirm password is required.
+      </div>
+      <div *ngIf="submitted && f['repeatPassword'].errors['mustMatch']">
+        Password does not match. Kindly re-enter your password.
+      </div>
+    </div>
+  </div></div><br><hr>
+    <button type="submit" class="btn btn-outline-primary">Register</button>
+  </form>
+</div></div>
+</div>

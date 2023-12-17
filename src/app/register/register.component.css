@@ -1,0 +1,11 @@
+hr {
+  border-top: 3px solid black;
+}
+
+.register-form{
+  padding-left: 50px;
+  padding-top: 40px;
+  padding-right: 40px;
+  width: 800px;
+  float: left;
+}
